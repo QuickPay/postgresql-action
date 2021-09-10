@@ -10,19 +10,19 @@ inputs:
   postgresql version:
     description: 'Version of PostgreSQL to use'
     required: false
-    default: 'latest'
+    default: '11'
   postgresql db:
     description: 'POSTGRES_DB - name for the default database that is created'
     required: false
-    default: ''
+    default: 'backends_test'
   postgresql user:
     description: 'POSTGRES_USER - create the specified user with superuser power'
     required: false
-    default: ''
+    default: 'backends_u'
   postgresql password:
     description: 'POSTGRES_PASSWORD - superuser password'
     required: false
-    default: ''
+    default: 'abc'
 runs:
   using: 'docker'
   image: 'Dockerfile'
