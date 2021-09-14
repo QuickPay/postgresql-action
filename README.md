@@ -1,19 +1,28 @@
 # PostgreSQL GitHub Action
+This action ensures that a postgresql server is running.
 
-This [GitHub Action](https://github.com/features/actions) sets up a PostgreSQL database.
+This project is a fork of https://github.com/Harmon758/postgresql-action, with the defaults changed to our defaults
+## Usage
 
-# Usage
-
-See [action.yml](action.yml)
-
-Basic:
 ```yaml
 steps:
-- uses: harmon758/postgresql-action@v1
+- uses: quickpay/postgresql-action@v2
   with:
-    postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
+    # the version of postgres server to run as
+    # default is 11
+    postgresql version: "11"
+
+    # the name of the database in question
+    # default is "backends_test"
+    postgresql db: "backends_test"
+
+    # the name of the user with superuser powers that gonna be created
+    # default is "backends_u"
+    postgresql user: "backends_u"
+
+    # the password of the super user
+    # default is "abc"
+    postgresql password: "abc"
 ```
 
-# License
-
-The scripts and documentation in this project are released under the [MIT License](LICENSE)
+This project is almost always used in conjunction with [QuickPay/quickpay-base-action](https://github.com/QuickPay/quickpay-base-action)'s postgres mode
