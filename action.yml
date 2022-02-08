@@ -23,6 +23,10 @@ inputs:
     description: 'POSTGRES_PASSWORD - superuser password'
     required: false
     default: 'abc'
+  port:
+    description: "the port to expose the service at"
+    required: false
+    default: "5432"
 runs:
   using: 'docker'
   image: 'Dockerfile'
